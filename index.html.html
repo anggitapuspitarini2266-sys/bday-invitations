@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Spesial Hari Lahir Putera Tsany</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500&family=Sacramento&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #4a0e17;
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            background: radial-gradient(circle, #ffffff 60%, #f5e6e8 100%);
+        }
+
+        .invitation-container {
+            max-width: 450px;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #800020; /* Maroon */
+            color: #ffffff;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+            overflow: hidden;
+            border: 8px solid #ffffff;
+            outline: 2px solid #800020;
+            outline-offset: -10px;
+        }
+
+        /* Decorative Rose Elements */
+        .rose-decor {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            opacity: 0.85;
+            animation: floatRoses 4s ease-in-out infinite alternate;
+        }
+
+        .rose-top-left {
+            top: -10px;
+            left: -10px;
+        }
+
+        .rose-bottom-right {
+            bottom: -10px;
+            right: -10px;
+            transform: rotate(180deg);
+            animation-delay: 2s;
+        }
+
+        @keyframes floatRoses {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(10px) rotate(5deg); }
+        }
+
+        /* Typography */
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 11pt;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #f5e6e8;
+            margin-top: 20px;
+        }
+
+        .title {
+            font-family: 'Sacramento', cursive;
+            font-size: 38pt;
+            color: #ffffff;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .celebrant-name {
+            font-family: 'Cinzel', serif;
+            font-size: 20pt;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #f5e6e8;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 15px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .details-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 25px 20px;
+            border-radius: 15px;
+            width: 90%;
+            margin: 20px 0;
+        }
+
+        .date, .time, .venue {
+            font-size: 11pt;
+            margin: 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .venue-name {
+            font-weight: 600;
+            font-size: 13pt;
+            color: #ffffff;
+            margin-top: 5px;
+        }
+
+        /* Countdown Style */
+        .countdown-container {
+            width: 100%;
+            margin: 25px 0;
+        }
+
+        .countdown-title {
+            font-family: 'Cinzel', serif;
+            font-size: 9pt;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: #f5e6e8;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .countdown-item {
+            background: #ffffff;
+            color: #800020;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 65px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .countdown-number {
+            font-size: 16pt;
+            font-weight: 700;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 7pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-top: 2px;
+        }
+
+        /* Button Style */
+        .maps-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            color: #800020;
+            text-decoration: none;
+            padding: 12px 25px;
+            font-size: 10pt;
+            font-weight: 600;
+            border-radius: 25px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-top: 15px;
+            border: 2px solid transparent;
+        }
+
+        .maps-btn:hover {
+            background-color: #800020;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .maps-btn svg {
+            margin-right: 8px;
+            fill: currentColor;
+        }
+
+        /* Audio Controls */
+        .music-control {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.3s;
+        }
+
+        .music-control:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .music-control svg {
+            width: 18px;
+            height: 18px;
+            fill: #ffffff;
+        }
+
+        .music-control.paused .playing-icon {
+            display: none;
+        }
+
+        .music-control:not(.paused) .paused-icon {
+            display: none;
+        }
+
+        .footer-note {
+            font-size: 8pt;
+            letter-spacing: 1px;
+            color: #f5e6e8;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invitation-container">
+        <!-- Maroon Rose SVG Elements -->
+        <svg class="rose-decor rose-top-left" viewBox="0 0 100 100">
+            <path d="M50,50 C40,30 20,40 35,60 C15,65 20,85 45,75 C60,95 80,80 70,60 C90,50 75,20 50,50 Z" fill="#4a0e17"/>
+            <path d="M50,50 C45,35 30,40 40,55 C25,60 30,75 48,68 C58,82 72,70 65,55 C78,48 68,28 50,50 Z" fill="#600018"/>
+            <circle cx="50" cy="55" r="5" fill="#f5e6e8" opacity="0.3"/>
+        </svg>
+
+        <svg class="rose-decor rose-bottom-right" viewBox="0 0 100 100">
+            <path d="M50,50 C40,30 20,40 35,60 C15,65 20,85 45,75 C60,95 80,80 70,60 C90,50 75,20 50,50 Z" fill="#4a0e17"/>
+            <path d="M50,50 C45,35 30,40 40,55 C25,60 30,75 48,68 C58,82 72,70 65,55 C78,48 68,28 50,50 Z" fill="#600018"/>
+            <circle cx="50" cy="55" r="5" fill="#f5e6e8" opacity="0.3"/>
+        </svg>
+
+        <!-- Music Control Button -->
+        <div class="music-control" id="musicBtn" onclick="toggleMusic()">
+            <svg class="playing-icon" viewBox="0 0 24 24">
+                <path d="M6 9v6h4l5 5V4l-5 5H6zm11 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14.5 3.2v2.06c2.89.86 5 3.54 5 6.74s-2.11 5.88-5 6.74v2.06c4.01-.91 7-4.49 7-8.8s-2.99-7.89-7-8.8z"/>
+            </svg>
+            <svg class="paused-icon" viewBox="0 0 24 24" style="display:none;">
+                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+            </svg>
+        </div>
+
+        <!-- Alamat Audio Romantis Bebas Hak Cipta -->
+        <audio id="bgMusic" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+        </audio>
+
+        <div>
+            <p class="subtitle">Perayaan Hari Lahir</p>
+            <h1 class="title">Selamat Ulang Tahun</h1>
+            <div class="celebrant-name">Putera Tsany</div>
+        </div>
+
+        <div class="details-box">
+            <div class="date">
+                <strong>Hari / Tanggal:</strong><br>Selasa, 16 Juni 2026
+            </div>
+            <div class="time">
+                <strong>Waktu:</strong><br>16.30 WIB - Selesai
+            </div>
+            <div class="venue">
+                <strong>Tempat:</strong>
+                <div class="venue-name">Hawkers Magelang</div>
+            </div>
+        </div>
+
+        <!-- Countdown Section -->
+        <div class="countdown-container">
+            <p class="countdown-title">Menghitung Mundur Acara</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Hari</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Jam</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Menit</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Detik</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <!-- Google Maps Button -->
+            <a href="https://maps.google.com/?q=Hawkers+Magelang" target="_blank" class="maps-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Buka Google Maps
+            </a>
+        </div>
+
+        <p class="footer-note">Kehadiranmu adalah hadiah terindah</p>
+    </div>
+
+    <script>
+        // Konfigurasi Target Waktu Acara (16 Juni 2026, 16:30)
+        const targetDate = new Date("June 16, 2026 16:30:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference < 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Logika Kontrol Musik
+        const music = document.getElementById("bgMusic");
+        const musicBtn = document.getElementById("musicBtn");
+        const playingIcon = musicBtn.querySelector(".playing-icon");
+        const pausedIcon = musicBtn.querySelector(".paused-icon");
+
+        document.body.addEventListener('click', function() {
+            if(music.paused && !musicBtn.classList.contains('manually-paused')) {
+                playAudio();
+            }
+        }, { once: true });
+
+        function playAudio() {
+            music.play().then(() => {
+                playingIcon.style.display = "block";
+                pausedIcon.style.display = "none";
+                musicBtn.classList.remove('paused');
+            }).catch(e => console.log("Autoplay ditolak sistem browser sebelum interaksi."));
+        }
+
+        function toggleMusic() {
+            if (music.paused) {
+                playAudio();
+                musicBtn.classList.remove('manually-paused');
+            } else {
+                music.pause();
+                playingIcon.style.display = "none";
+                pausedIcon.style.display = "block";
+                musicBtn.classList.add('paused');
+                musicBtn.classList.add('manually-paused');
+            }
+        }
+    </script>
+</body>
+</html>
